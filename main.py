@@ -15,7 +15,7 @@ clf = None
 
 @app.on_event("startup")
 def load_train_model():
-    df = pd.read_csv("iris_ok.csv")
+    df = pd.read_csv("iris1.csv")
     global neigh
     neigh = KNeighborsClassifier(n_neighbors=len(np.unique(df['y'])))
     neigh.fit(df[df.columns[:4]].values.tolist(), df['y'])
