@@ -4,7 +4,7 @@ COPY . .
 EXPOSE 8000
 RUN pip install -r requirements.txt
 
-
+CMD Python3 main.py
 #docker stop api; docker rm api
 # build docker
 #docker build -t api .
