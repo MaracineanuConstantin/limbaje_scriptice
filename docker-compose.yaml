@@ -1,0 +1,31 @@
+version: '3'
+services:
+    api:
+      build:
+        context: .
+      container_name: api
+      image: api
+      restart: always
+      volumes:
+        - iris1.csv:/app/iris_ok.csv
+      ports:
+        - "8000:8000"
+      command: "python -m uvicorn main:app --host 0.0.0.0"
+    
+    # api1:
+    #   container_name: api1
+    #   image: api
+    #   restart: always
+    #   ports:
+    #     - "8001:8000"
+    #   command: "python -m uvicorn main:app --host 0.0.0.0"
+
+
+
+#docker compose up -d
+#docker-compose up -d
+# docker compose down
+# docker image rm api
+#docker images rm 3cifredinID
+
+#docker exec -it -u0 api bash
